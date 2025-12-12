@@ -35,11 +35,21 @@ export default function About() {
         <p className="subtitle">Game Developer & Software Engineer</p>
         <p className="summary">
           Passionate and motivated Game Developer and aspiring Software Engineer who
-          strives to make positive impacts on the worldƒ?"one project, one dream, and
+          strives to make positive impacts on the world one project, one dream, and
           one person at a time. Dedicated to continuous growth, innovation, and
           creating meaningful change through technology, while embracing challenges
           as opportunities for improvement with persistence and the love of
           overcoming.
+        </p>
+        <p className="contact-line">
+          <span aria-hidden className="inline-icon">✉</span>{' '}
+          <a href="mailto:magliettothomas@gmail.com">magliettothomas@gmail.com</a>
+          {'  •  '}
+          <span aria-hidden className="inline-icon">☎</span>{' '}
+          <a href="tel:+17049099760">(704) 909-9760</a>
+          {'  •  '}
+          <span aria-hidden className="inline-icon">⌂</span>{' '}
+          Huntersville, NC
         </p>
         <div className="resume-cta">
           <a
@@ -51,27 +61,23 @@ export default function About() {
             Download Resume
           </a>
         </div>
-        <p className="contact-line">
-          <a href="mailto:magliettothomas@gmail.com">magliettothomas@gmail.com</a>
-          {' ƒ?› '}
-          <a href="tel:+17049099760">(704) 909-9760</a>
-          {' ƒ?› '}Huntersville, NC
-        </p>
       </header>
 
       <div className="split">
         <div>
           <h3>Education</h3>
           <p>
-            <strong>B.S. in Computer Science</strong><br />
-            Appalachian State University, Boone, NC<br />
+            <strong>B.S. in Computer Science</strong>
+            <br />
+            Appalachian State University, Boone, NC
+            <br />
           </p>
         </div>
         <div>
           <h3>Highlights</h3>
           <ul className="bullets">
-            <li> Creative ƒ?› Tenacious ƒ?› Impactful</li>
-            <li>Challenge Seeker ƒ?› Team player ƒ?› Problem solver</li>
+            <li>Creative • Tenacious • Impactful</li>
+            <li>Challenge Seeker • Team player • Problem solver</li>
           </ul>
         </div>
       </div>
