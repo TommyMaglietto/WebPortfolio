@@ -1,0 +1,2 @@
+C:\Users\magli\Desktop\my-app <--- Raplace path with CMD
+npm run dev in CMD
