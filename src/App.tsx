@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Container from './components/Container';
 import RetroBackground from './components/RetroBackground';
 import Navbar, { type TabKey } from './components/Navbar';
 import About from './sections/About';
@@ -16,16 +17,16 @@ export default function App() {
       <RetroBackground active={active} />
 
       <header className="site-header">
-        <div className="container header-inner">
+        <Container className="header-inner">
           <h1 className="brand">Thomas Maglietto</h1>
-          <Navbar active={active} onChange={setActive} />
-        </div>
+        </Container>
+        <Navbar active={active} onChange={setActive} />
       </header>
 
       <main className="content" role="main">
-        <div className="container">
-          {active === 'about' && (
-            <>
+        {active === 'about' && (
+          <>
+            <Container>
               <section className="profile-hero">
                 <div className="avatar pixel-border">
                   {avatarOk ? (
@@ -40,23 +41,23 @@ export default function App() {
                   )}
                 </div>
               </section>
-              <About />
-            </>
-          )}
-          {active === 'projects' && (
-            <>
-              <Projects />
-              <Skills />
-            </>
-          )}
-          {active === 'contact' && <Contact />}
-        </div>
+            </Container>
+            <About />
+          </>
+        )}
+        {active === 'projects' && (
+          <>
+            <Projects />
+            <Skills />
+          </>
+        )}
+        {active === 'contact' && <Contact />}
       </main>
 
       <footer className="site-footer">
-        <div className="container">
-          <small>© {new Date().getFullYear()} Thomas Maglietto</small>
-        </div>
+        <Container>
+          <small>(c) {new Date().getFullYear()} Thomas Maglietto</small>
+        </Container>
       </footer>
     </div>
   );
