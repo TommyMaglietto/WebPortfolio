@@ -20,6 +20,20 @@
   box-sizing: border-box;
 }
 
+body {
+  cursor: url('/Cursor.png') 0 0, auto;
+}
+
+a,
+button,
+[role="button"],
+input,
+textarea,
+select,
+label {
+  cursor: url('/Cursor.png') 0 0, pointer;
+}
+
 .site-shell {
   position: relative;
   min-height: 100vh;
