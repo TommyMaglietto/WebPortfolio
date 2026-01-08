@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
 import Container from '../components/Container';
+import SocialLoadout from '../components/SocialLoadout';
 
 const resumePdf = '/Thomas_Maglietto_Resume.pdf';
 
@@ -80,6 +81,8 @@ export default function About() {
             </ul>
           </div>
         </div>
+
+        <SocialLoadout />
       </section>
     </Container>
   );
