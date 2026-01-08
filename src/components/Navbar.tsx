@@ -27,8 +27,8 @@ const TABS: {
   stacked?: { top: string; bottom: string };
   variant?: 'home' | 'projects' | 'experience';
 }[] = [
-  { key: 'projects', label: 'Projects & Skills', stacked: { top: 'Projects ', bottom: '& Skills' }, icon: '*', variant: 'projects' },
   { key: 'about', label: 'Home', icon: 'O', variant: 'home' },
+  { key: 'projects', label: 'Projects & Skills', stacked: { top: 'Projects ', bottom: '& Skills' }, icon: '*', variant: 'projects' },
   { key: 'contact', label: 'Experience', icon: '+', variant: 'experience' },
 ];
 
