@@ -298,8 +298,8 @@ label {
 .bullets { margin: 0; padding-left: 1rem; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(0.6rem, 2vw, 1rem); }
-.card { background: var(--panel-strong); border-radius: 10px; padding: clamp(0.75rem, 2vw, 1rem); cursor: pointer; transition: transform 120ms ease, background 120ms ease; }
-.card:hover { transform: translateY(-2px); }
+.card { background: var(--panel-strong); border-radius: 10px; padding: clamp(0.75rem, 2vw, 1rem); cursor: default; transition: none; }
+.card:hover { transform: none; }
 .card.expanded { background: rgba(100,167,255,0.12); }
 .card-header { display: grid; grid-template-columns: 72px 1fr; gap: 0.8rem; align-items: center; }
 .card-title { margin: 0; font-size: 1.05rem; }

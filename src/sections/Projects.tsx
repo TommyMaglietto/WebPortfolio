@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import Container from '../components/Container';
-import ProjectOverlay from '../components/ProjectOverlay';
 
 type Project = {
   id: string;
@@ -61,8 +59,6 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
-  const [expanded, setExpanded] = useState<string | null>(null);
-  const [open, setOpen] = useState<Project | null>(null);
   const featured = projects.find((p) => p.id === 'one-of-us') || null;
   const rest = projects.filter((p) => p.id !== 'one-of-us');
 
@@ -73,21 +69,7 @@ export default function Projects() {
         {/* Featured horizontal card */}
         {featured && (
           <article
-            className={'card project-featured pixel-border ' + (expanded === featured.id ? 'expanded' : '')}
-            onClick={() => {
-              setExpanded(expanded === featured.id ? null : featured.id);
-              setOpen(featured);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                setExpanded(expanded === featured.id ? null : featured.id);
-                setOpen(featured);
-              }
-            }}
-            role="button"
-            tabIndex={0}
-            aria-expanded={expanded === featured.id}
+            className="card project-featured pixel-border"
           >
             <div className="featured-thumb" aria-hidden={featured.screenshot ? undefined : true}>
               {featured.screenshot ? (
@@ -121,21 +103,7 @@ export default function Projects() {
           {rest.map((p) => (
             <article
               key={p.id}
-              className={'card pixel-border ' + (expanded === p.id ? 'expanded' : '')}
-              onClick={() => {
-                setExpanded(expanded === p.id ? null : p.id);
-                setOpen(p);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setExpanded(expanded === p.id ? null : p.id);
-                  setOpen(p);
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              aria-expanded={expanded === p.id}
+              className="card pixel-border"
             >
               <div className="card-header">
                 <div className="card-thumb" aria-hidden={p.screenshot ? undefined : true}>
@@ -166,9 +134,6 @@ export default function Projects() {
             </article>
           ))}
         </div>
-        {open && (
-          <ProjectOverlay project={open} onClose={() => setOpen(null)} />
-        )}
       </section>
     </Container>
   );
