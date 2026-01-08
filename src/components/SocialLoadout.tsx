@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 
 const GITHUB_URL = 'https://github.com/TommyMaglietto';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/thomas-maglietto-426395324/';
@@ -18,7 +19,7 @@ type SocialItem = {
   hotkey: string;
   ariaLabel: string;
   stats: SocialStat[];
-  icon: JSX.Element;
+  icon: ReactNode;
 };
 
 const LOG_LINES = [
