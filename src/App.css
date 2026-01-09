@@ -361,18 +361,6 @@ label {
   background: #a6f7b2;
   box-shadow: 0 0 6px rgba(166,247,178,0.7);
 }
-.loadout-hotkeys {
-  justify-self: center;
-  font-family: 'Press Start 2P', system-ui, sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.5px;
-  color: var(--muted);
-  text-align: center;
-  background: rgba(15,20,40,0.72);
-  padding: 0.35rem 0.6rem;
-  border-radius: 8px;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.06);
-}
 .social-loadout-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -28,8 +28,6 @@ const LOG_LINES = [
   '> Tip: Press [G] or [L] to travel',
 ];
 
-const HOTKEYS_TEXT = 'HOTKEYS: [G] GitHub  [L] LinkedIn';
-
 function CodeForgeIcon() {
   return (
     <img src="/Git.png" alt="" aria-hidden="true" />
@@ -90,7 +88,6 @@ export default function SocialLoadout() {
   const [confirmingId, setConfirmingId] = useState<string | null>(null);
   const [typedLines, setTypedLines] = useState<string[]>([]);
   const [hasViewed, setHasViewed] = useState(false);
-  const [showHotkeys, setShowHotkeys] = useState(false);
   const [typingComplete, setTypingComplete] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const terminalRef = useRef<HTMLDivElement | null>(null);
@@ -142,15 +139,6 @@ export default function SocialLoadout() {
     );
     observer.observe(target);
     return () => observer.disconnect();
-  }, [hasViewed]);
-
-  useEffect(() => {
-    if (!hasViewed) {
-      return;
-    }
-    setShowHotkeys(true);
-    const timeout = window.setTimeout(() => setShowHotkeys(false), 4200);
-    return () => window.clearTimeout(timeout);
   }, [hasViewed]);
 
   useEffect(() => {
@@ -240,12 +228,6 @@ export default function SocialLoadout() {
         <span className="loadout-title" id="social-loadout-title">SOCIAL LOADOUT</span>
         <span className="loadout-status">ONLINE</span>
       </header>
-
-      {showHotkeys && (
-        <div className="loadout-hotkeys" role="status" aria-live="polite">
-          {HOTKEYS_TEXT}
-        </div>
-      )}
 
       <div className="social-loadout-grid">
         {SOCIALS.map((social) => {
