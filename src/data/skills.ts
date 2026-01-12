@@ -16,11 +16,11 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Languages',
     items: [
-      { name: 'JavaScript/CSS/HTML', level: 55 },
+      { name: 'JavaScript/CSS/HTML/JSX', level: 75 },
       { name: 'C/C#/C++', level: 60 },
       { name: 'Haskell', level: 38 },
       { name: 'Java', level: 72 },
-      { name: 'Lua', level: 85 },
+      { name: 'Lua', level: 65 },
       { name: 'SQL', level: 40 },
       { name: 'Swift', level: 45 },
     ],
@@ -28,7 +28,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Technical',
     items: [
-      { name: '3D Animation', level: 50 },
+      { name: 'React/Next.js/Tailwind', level: 80 },
       { name: '3D Modeling', level: 68 },
       { name: '3D Texturing', level: 48 },
       { name: 'Algorithms', level: 82 },
@@ -44,8 +44,8 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Git', level: 70 },
       { name: 'GitHub', level: 84 },
       { name: 'MySQL', level: 40 },
-      { name: 'Roblox Studio', level: 90 },
-      { name: 'VS Code', level: 85 },
+      { name: 'Roblox Studio', level: 82 },
+      { name: 'VS Code', level: 90 },
       { name: 'Xcode', level: 50 },
     ],
   },
