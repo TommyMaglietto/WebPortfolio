@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './styles/app.css';
 import Container from './components/Container';
 import RetroBackground from './components/RetroBackground';
@@ -9,12 +9,37 @@ import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import useScrollLock from './hooks/useScrollLock';
 
+const TAB_STORAGE_KEY = 'activeTab';
+
+const isTabKey = (value: string | null): value is TabKey =>
+  value === 'about' || value === 'projects' || value === 'experience';
+
+const getInitialTab = (): TabKey => {
+  if (typeof window === 'undefined') {
+    return 'about';
+  }
+  try {
+    const stored = window.localStorage.getItem(TAB_STORAGE_KEY);
+    return isTabKey(stored) ? stored : 'about';
+  } catch {
+    return 'about';
+  }
+};
+
 export default function App() {
-  const [active, setActive] = useState<TabKey>('about');
+  const [active, setActive] = useState<TabKey>(getInitialTab);
   const [avatarOk, setAvatarOk] = useState(true);
   const mainRef = useRef<HTMLElement | null>(null);
 
   useScrollLock({ enabled: active === 'about', mainRef });
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(TAB_STORAGE_KEY, active);
+    } catch {
+      // Ignore storage write failures (private mode, disabled storage).
+    }
+  }, [active]);
 
   return (
     <div className="site-shell">
