@@ -1,32 +1,13 @@
 import type { MouseEvent } from 'react';
 import Container from '../components/Container';
 import SocialLoadout from '../components/SocialLoadout';
+import { downloadFile } from '../utils/download';
 
 const resumePdf = '/Thomas_Maglietto_Resume.pdf';
 
 function handleResumeDownload(e: MouseEvent<HTMLAnchorElement>) {
   e.preventDefault();
-  const href = resumePdf;
-  (async () => {
-    try {
-      const res = await fetch(href, { cache: 'no-cache' });
-      if (!res.ok) {
-        window.location.href = href;
-        return;
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Thomas_Maglietto_Resume.pdf';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    } catch {
-      window.location.href = href;
-    }
-  })();
+  void downloadFile({ url: resumePdf, filename: 'Thomas_Maglietto_Resume.pdf' });
 }
 
 export default function About() {
@@ -76,8 +57,8 @@ export default function About() {
           <div>
             <h3>Highlights</h3>
             <ul className="bullets">
-              <li>Creative • Tenacious • Impactful</li>
-              <li>Challenge Seeker • Team player • Problem solver</li>
+              <li>Creative - Tenacious - Impactful</li>
+              <li>Challenge Seeker - Team player - Problem solver</li>
             </ul>
           </div>
         </div>

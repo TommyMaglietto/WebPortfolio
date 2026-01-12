@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export type TabKey = 'about' | 'projects' | 'contact';
+export type TabKey = 'about' | 'projects' | 'experience';
 
 const HOME_IDLE_SRC = '/HomeButton.png';
 const HOME_GIF_SRC = '/HomeButton.gif';
@@ -29,7 +29,7 @@ const TABS: {
 }[] = [
   { key: 'about', label: 'Home', icon: 'O', variant: 'home' },
   { key: 'projects', label: 'Projects & Skills', stacked: { top: 'Projects ', bottom: '& Skills' }, icon: '*', variant: 'projects' },
-  { key: 'contact', label: 'Experience', icon: '+', variant: 'experience' },
+  { key: 'experience', label: 'Experience', icon: '+', variant: 'experience' },
 ];
 
 export function Navbar({ active, onChange }: NavbarProps) {

@@ -1,21 +1,13 @@
 import { useEffect, useRef } from 'react';
-import type { TabKey } from './Navbar';
-
-interface RetroBackgroundProps {
-  active: TabKey;
-}
 
 type Star = { x: number; y: number; z: number; tw: number };
 
-// A lightweight retro starfield + tiny sprite that subtly reacts to tab changes
-export default function RetroBackground({ active }: RetroBackgroundProps) {
+// A lightweight retro starfield background.
+export default function RetroBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animRef = useRef<number | null>(null);
   const starsRef = useRef<Star[]>([]);
   const tRef = useRef(0);
-  // removed sprite state to keep background subtle and professional
-
-  // Sprite reactions removed; no per-tab targets needed
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -64,8 +56,6 @@ export default function RetroBackground({ active }: RetroBackgroundProps) {
       }
       ctx.globalAlpha = 1;
 
-      // removed ground bar and alien sprite for a cleaner background
-
       animRef.current = requestAnimationFrame(loop);
     };
 
@@ -75,10 +65,6 @@ export default function RetroBackground({ active }: RetroBackgroundProps) {
       window.removeEventListener('resize', onResize);
     };
   }, []);
-
-  // React when active tab changes: nudge sprite towards section
-  // Tab changes no longer move a sprite; background remains subtle
-  useEffect(() => { /* no-op to keep background subtle */ }, [active]);
 
   return (
     <canvas

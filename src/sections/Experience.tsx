@@ -1,17 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Container from '../components/Container';
-
-type QuestStatus = 'Completed' | 'Active';
-interface Quest {
-  id: string;
-  title: string;
-  guild: string;
-  region: string;
-  season: string;
-  status: QuestStatus;
-  objectives: string[];
-  iconSrc: string;
-}
+import { experienceItems } from '../data/experience';
 
 const BIRTHDAY = { year: 2003, month: 4, day: 15 };
 
@@ -33,89 +22,6 @@ const getLevelAndXp = (today = new Date()) => {
 
 const STAT_CHIPS = ['Quest Driven', 'Full-Stack Build', 'Collaborator', 'Growth Mindset'];
 
-const QUESTS: Quest[] = [
-  {
-    id: 'midwood-smokehouse',
-    title: 'Server',
-    guild: 'Midwood Smokehouse',
-    region: 'Huntersville, NC',
-    season: '05/2025 - Current',
-    status: 'Active',
-    iconSrc: '/bbq.png',
-    objectives: [
-      'Deliver guest-first service with speed and accuracy',
-      'Coordinate with the kitchen to keep orders flowing smoothly',
-      'Maintain a welcoming, upbeat dining experience',
-    ],
-  },
-  {
-    id: 'remix-counselor',
-    title: 'Remix Counselor',
-    guild: 'Lake Forest Church',
-    region: 'Huntersville, NC',
-    season: '11/2025 - Current',
-    status: 'Active',
-    iconSrc: '/Remix.png',
-    objectives: [
-      'Guide freshmen in high school to grow in Mind and Spirit',
-      'Helped run group counseling sessions that supported honest conversation and mutual support',
-    ],
-  },
-  {
-    id: 'volunteer',
-    title: 'Volunteer',
-    guild: 'Volunteer',
-    region: 'Todd, NC',
-    season: '09/2024 - 11/2024',
-    status: 'Completed',
-    iconSrc: '/Volounteer.png',
-    objectives: [
-      'Assisted with debris clean up and distributing supplies',
-    ],
-  },
-  {
-    id: 'camp-counselor',
-    title: 'Camp Counselor',
-    guild: 'Mecklenburg County Recreation',
-    region: 'Huntersville, NC',
-    season: '06/2024 - 08/2024',
-    status: 'Completed',
-    iconSrc: '/Camp.png',
-    objectives: [
-      'Supervised energetic children ages 6 to 8 during crafts and field trips',
-      'Acted as a role model through consistent enthusiasm',
-    ],
-  },
-  {
-    id: 'resident-assistant',
-    title: 'Resident Assistant',
-    guild: 'Appalachian State University Housing',
-    region: 'Boone, NC',
-    season: '01/2023 - 06/2024',
-    status: 'Completed',
-    iconSrc: '/Resident.png',
-    objectives: [
-      'Brought residents together through community events that encouraged connection',
-      'Helped mediate resident conflicts by guiding conversations toward respectful solutions',
-      'Created and led programs designed to support residents\' personal growth and academic success',
-    ],
-  },
-  {
-    id: '131-main-server',
-    title: 'Server',
-    guild: '131 Main',
-    region: 'Huntersville, NC',
-    season: '08/2019 - 08/2021',
-    status: 'Completed',
-    iconSrc: '/server.png',
-    objectives: [
-      'Provided attentive table service in a high-volume setting',
-      'Collaborated with the team to keep service smooth and on-time',
-      'Kept guests informed and ensured orders were accurate',
-    ],
-  },
-];
-
 const ACHIEVEMENTS = [
   'System Thinker',
   'Debug Duelist',
@@ -127,7 +33,7 @@ const ACHIEVEMENTS = [
   'Service Mindset',
 ];
 
-export default function Contact() {
+export default function Experience() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [xpActive, setXpActive] = useState(false);
   const xpRef = useRef<HTMLDivElement | null>(null);
@@ -193,13 +99,13 @@ export default function Contact() {
     };
   }, []);
 
-  const toggleQuest = (id: string) => {
+  const toggleQuest = useCallback((id: string) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
+  }, []);
 
   return (
     <Container>
-      <section id="contact" className="pixel-panel experience-panel" aria-labelledby="experience-title">
+      <section id="experience" className="pixel-panel experience-panel" aria-labelledby="experience-title">
         <div className="hud-scanlines" aria-hidden="true" />
         <div className="hud-particles" aria-hidden="true">
           <span />
@@ -231,14 +137,21 @@ export default function Contact() {
                 </div>
               </div>
 
-                <div className="level-row">
-                  <div className="level-label">Level</div>
-                  <div className="level-value" aria-label={`Level ${level}`}>{level}</div>
-                </div>
+              <div className="level-row">
+                <div className="level-label">Level</div>
+                <div className="level-value" aria-label={`Level ${level}`}>{level}</div>
+              </div>
 
               <div className="xp-block" ref={xpRef}>
                 <div className="xp-label">XP: Growth Grind</div>
-                <div className="xp-bar" role="progressbar" aria-label="XP Growth Grind" aria-valuemin={0} aria-valuemax={100} aria-valuenow={xpPercent}>
+                <div
+                  className="xp-bar"
+                  role="progressbar"
+                  aria-label="XP Growth Grind"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={xpPercent}
+                >
                   <span className="xp-fill" style={{ width: xpActive ? `${xpPercent}%` : '0%' }} />
                 </div>
                 <div className="xp-percent">{xpPercent}%</div>
@@ -259,17 +172,17 @@ export default function Contact() {
                 <span className="passive-label">Passive Buff:</span>
                 <span className="passive-text">
                   <span className="buff-detail">When challenged</span>
-                  <span className="buff-amount">+10</span>
+                  <span className="buff-amount">+10 </span>
                   <span className="buff-name">Persistence</span>
                 </span>
                 <span className="passive-text">
                   <span className="buff-detail">To new idea discovery</span>
-                  <span className="buff-amount">+5</span>
+                  <span className="buff-amount">+5 </span>
                   <span className="buff-name">Curiosity Spark</span>
                 </span>
                 <span className="passive-text">
                   <span className="buff-detail">When collaborating</span>
-                  <span className="buff-amount">+8</span>
+                  <span className="buff-amount">+8 </span>
                   <span className="buff-name">Team Sync</span>
                 </span>
               </div>
@@ -281,7 +194,7 @@ export default function Contact() {
               </div>
 
               <div className="quest-list">
-                {QUESTS.map((quest) => {
+                {experienceItems.map((quest) => {
                   const isOpen = !!expanded[quest.id];
                   const contentId = `quest-${quest.id}`;
                   return (
@@ -314,18 +227,18 @@ export default function Contact() {
                           />
                         </span>
                         <span className="quest-main">
-                          <span className="quest-title">{quest.title}</span>
-                          <span className="quest-guild">{quest.guild}</span>
+                          <span className="quest-title">{quest.role}</span>
+                          <span className="quest-guild">{quest.company}</span>
                           <span className="quest-meta">
-                            <span>{quest.season}</span>
-                            <span>{quest.region}</span>
+                            <span>{quest.dates}</span>
+                            <span>{quest.location}</span>
                           </span>
                         </span>
                       </button>
-                      <div id={contentId} className="quest-content" role="region" aria-label={`${quest.title} objectives`}>
+                      <div id={contentId} className="quest-content" role="region" aria-label={`${quest.role} objectives`}>
                         <div className="quest-content-inner">
                           <ul className="quest-objectives">
-                            {quest.objectives.map((objective) => (
+                            {quest.impact.map((objective) => (
                               <li key={objective}>{objective}</li>
                             ))}
                           </ul>
@@ -335,7 +248,6 @@ export default function Contact() {
                   );
                 })}
               </div>
-
             </section>
           </div>
         </div>
