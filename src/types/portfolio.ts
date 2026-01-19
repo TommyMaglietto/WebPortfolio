@@ -5,6 +5,7 @@ export type Project = {
   details: string;
   skills: string[];
   github?: string;
+  live?: string;
   screenshot?: string;
 };
 

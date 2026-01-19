@@ -11,6 +11,27 @@ export const projects: Project[] = [
     screenshot: '/One-Of-Us.png',
   },
   {
+    id: 'save-one-more-person',
+    title: 'Save One More Person (SOMP)',
+    blurb: 'Mobile-first market research MVP that gamifies feature validation with swipe-based feedback.',
+    details:
+      'Swipe-based yes/maybe/no cards with flip-to-comment interactions, local persistence with API sync, and community submissions with category filters, profanity checks, and abuse reporting.\nCore client component components/SwipeDeck.tsx orchestrates swipes, forms, and reporting modals while a weighted deck balances official and community features.\nSupabase-backed data model: features (id, name, category, description, created_at) and opinions (feature_id, score 1-3, rating 1-5 optional, comment, created_at).\nAPI routes: /api/features, /api/opinions, /api/community-features, /api/admin/* with a middleware-protected admin dashboard at /admin and Recharts analytics.',
+    skills: ['Next.js 16', 'React 19', 'Tailwind CSS 4', 'Supabase', 'PostgreSQL', 'Recharts', 'API Routes'],
+    screenshot: '/SOMP.png',
+    github: 'https://github.com/TommyMaglietto/SaveOneMorePerson-Market-Research-Site',
+    live: 'https://saveonemoreperson.com',
+  },
+  {
+    id: 'developer-portfolio',
+    title: 'Developer Portfolio Website',
+    blurb: 'Arcade-themed portfolio that turns projects and skills into a retro, playable experience.',
+    details:
+      'Built with React 19, Vite, and TypeScript to deliver a responsive arcade UI with pixel art framing and scanline accents.\nFeatures a starfield canvas background, tabbed navigation with localStorage persistence, and a gamified social loadout with keyboard shortcuts.\nIncludes a resume download flow plus dedicated projects and experience sections.',
+    skills: ['React 19', 'Vite', 'TypeScript', 'CSS', 'HTML5 Canvas', 'Responsive Design'],
+    screenshot: '/PixelMe.png',
+    github: 'https://github.com/TommyMaglietto/WebPortfolio',
+  },
+  {
     id: 'hunger-health',
     title: 'Hunger and Health iOS App',
     blurb: 'Team-built iOS app addressing food insecurity and health resources.',

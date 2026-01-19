@@ -578,11 +578,13 @@ label {
     animation: none;
   }
   .social-card,
-  .loadout-cta {
+  .loadout-cta,
+  .project-action {
     transition: none;
   }
   .social-card:hover,
-  .social-card:focus-within {
+  .social-card:focus-within,
+  .project-action:hover {
     transform: none;
     filter: none;
   }
@@ -592,10 +594,64 @@ label {
 .card { background: var(--panel-strong); border-radius: 10px; padding: clamp(0.75rem, 2vw, 1rem); cursor: default; transition: none; }
 .card:hover { transform: none; }
 .card.expanded { background: rgba(100,167,255,0.12); }
+.project-card {
+  position: relative;
+  overflow: hidden;
+  padding-right: calc(clamp(0.75rem, 2vw, 1rem) + 2.6rem);
+  background-color: var(--panel-strong);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.045) 0,
+    rgba(255,255,255,0.045) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+.project-actions {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+}
+.project-action {
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: #101a39;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.14);
+  transition: transform 120ms ease, filter 120ms ease;
+  padding: 0 6px;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  color: #cfe2ff;
+  text-decoration: none;
+}
+.project-action-text {
+  font-size: 0.45rem;
+  letter-spacing: 0.5px;
+}
+.project-action img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  image-rendering: pixelated;
+}
+.project-action:hover {
+  transform: translate(-1px, -1px);
+  filter: brightness(1.08);
+}
+.project-action:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.7);
+  outline-offset: 2px;
+}
 .card-header { display: grid; grid-template-columns: 72px 1fr; gap: 0.8rem; align-items: center; }
 .card-title { margin: 0; font-size: 1.05rem; }
 .card-blurb { margin: 0.2rem 0 0; color: var(--muted); word-break: break-word; }
 .card-details { margin-top: 0.6rem; font-size: 0.98rem; }
+.card-details p { white-space: pre-line; }
 .pixel-thumb { width: 64px; height: 64px; background: repeating-linear-gradient(45deg, #1a254d 0 6px, #0f1736 6px 12px); border-radius: 8px; box-shadow: 0 0 0 2px rgba(255,255,255,0.06); }
 .card-thumb img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; display: block; box-shadow: 0 0 0 2px rgba(255,255,255,0.06); }
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
@@ -1202,9 +1258,9 @@ label {
   grid-template-columns: 220px 1fr; /* wider left column for a larger image */
   gap: 1rem;
   align-items: stretch; /* allow left cell to stretch full height */
-  background: var(--panel-strong);
   border-radius: 10px;
   padding: 0.8rem;
+  padding-right: 3.4rem;
   margin-bottom: 1rem;
 }
 .project-featured .featured-thumb {
