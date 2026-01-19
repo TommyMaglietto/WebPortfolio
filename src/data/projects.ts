@@ -57,6 +57,7 @@ export const projects: Project[] = [
       'Purely functional design with monadic IO; modularized deck and hand evaluation logic.',
     skills: ['Haskell', 'Functional Programming'],
     screenshot: '/Haskel.png',
+    github: 'https://github.com/TommyMaglietto/BlackJack-In-Haskell',
   },
   {
     id: 'blender-3d',

@@ -597,7 +597,6 @@ label {
 .project-card {
   position: relative;
   overflow: hidden;
-  padding-right: calc(clamp(0.75rem, 2vw, 1rem) + 2.6rem);
   background-color: var(--panel-strong);
   background-image: repeating-linear-gradient(
     to bottom,
@@ -607,13 +606,19 @@ label {
     transparent 3px
   );
 }
+.project-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+.project-footer .chips { margin-top: 0; }
 .project-actions {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
-  z-index: 2;
   display: flex;
   gap: 0.4rem;
+  align-items: center;
+  margin-left: auto;
 }
 .project-action {
   min-width: 32px;
@@ -1260,7 +1265,6 @@ label {
   align-items: stretch; /* allow left cell to stretch full height */
   border-radius: 10px;
   padding: 0.8rem;
-  padding-right: 3.4rem;
   margin-bottom: 1rem;
 }
 .project-featured .featured-thumb {
@@ -1289,6 +1293,11 @@ label {
   .card-header { grid-template-columns: 64px 1fr; gap: 0.65rem; align-items: start; }
   .project-featured { grid-template-columns: 1fr; gap: 0.8rem; }
   .project-featured .featured-thumb { width: 100%; justify-content: center; }
+  .project-action {
+    min-width: 36px;
+    height: 36px;
+  }
+  .project-action-text { font-size: 0.5rem; }
 }
 
 @media (max-width: 640px) {

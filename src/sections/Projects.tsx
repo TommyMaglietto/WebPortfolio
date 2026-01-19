@@ -45,7 +45,6 @@ export default function Projects() {
         <h2 className="section-title">Projects</h2>
         {featured && (
           <article className="card project-card project-featured pixel-border">
-            {renderProjectActions(featured)}
             <div className="featured-thumb" aria-hidden={featured.screenshot ? undefined : true}>
               {featured.screenshot ? (
                 <img
@@ -63,10 +62,13 @@ export default function Projects() {
               <p className="card-blurb">{featured.blurb}</p>
               <div className="card-details">
                 <p>{featured.details}</p>
-                <div className="chips">
-                  {featured.skills.map((skill) => (
-                    <span key={skill} className="chip">{skill}</span>
-                  ))}
+                <div className="project-footer">
+                  <div className="chips">
+                    {featured.skills.map((skill) => (
+                      <span key={skill} className="chip">{skill}</span>
+                    ))}
+                  </div>
+                  {renderProjectActions(featured)}
                 </div>
               </div>
             </div>
@@ -76,7 +78,6 @@ export default function Projects() {
         <div className="cards cards-vertical">
           {rest.map((project) => (
             <article key={project.id} className="card project-card pixel-border">
-              {renderProjectActions(project)}
               <div className="card-header">
                 <div className="card-thumb" aria-hidden={project.screenshot ? undefined : true}>
                   {project.screenshot ? (
@@ -97,10 +98,13 @@ export default function Projects() {
               </div>
               <div className="card-details">
                 <p>{project.details}</p>
-                <div className="chips">
-                  {project.skills.map((skill) => (
-                    <span key={skill} className="chip">{skill}</span>
-                  ))}
+                <div className="project-footer">
+                  <div className="chips">
+                    {project.skills.map((skill) => (
+                      <span key={skill} className="chip">{skill}</span>
+                    ))}
+                  </div>
+                  {renderProjectActions(project)}
                 </div>
               </div>
             </article>
