@@ -11,6 +11,16 @@ export const projects: Project[] = [
     screenshot: '/One-Of-Us.png',
   },
   {
+    id: 'city-atlas-generator',
+    title: 'City Atlas Generator',
+    blurb: 'Generate premium dark-mode city maps with live layers, palette controls, and export-ready renders.',
+    details:
+      'Interactive canvas map renderer powered by OpenStreetMap data, with smooth pan/zoom, layer toggles, and a full color studio for fine-tuning the look.\nIncludes geocoding search, Overpass API data fetches, smart caching to keep navigation fluid, and 1x/2x/3x PNG exports for crisp presentation.',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'OpenStreetMap', 'Overpass API', 'Nominatim'],
+    github: 'https://github.com/TommyMaglietto/Simple-Custom-Map-Generator',
+    screenshot: '/map.png',
+  },
+  {
     id: 'save-one-more-person',
     title: 'Save One More Person (SOMP)',
     blurb: 'Mobile-first market research MVP that gamifies feature validation with swipe-based feedback.',
