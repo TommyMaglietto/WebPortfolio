@@ -11,6 +11,16 @@ export const projects: Project[] = [
     screenshot: '/One-Of-Us.png',
   },
   {
+    id: 'square-to-google-sheets-automation',
+    title: 'Square to Google Sheets Automation',
+    blurb: 'Python automation that syncs Square customer records to Google Sheets without manual CSV exports.',
+    details:
+      'Built a modular Python integration that pulls complete customer directories from Square via API pagination, normalizes JSON fields, and writes structured rows to Google Sheets.\nImplements OAuth 2.0 for secure Google Workspace access and includes resilient handling for empty datasets, network interruptions, and large account sizes.\nDesigned as a one-click workflow to keep customer data current for analysis and marketing operations.',
+    skills: ['Python', 'Square API', 'Google Sheets API', 'OAuth 2.0', 'Data Automation', 'JSON Processing'],
+    screenshot: '/square-to-sheets.png',
+    github: 'https://github.com/TommyMaglietto/Square-To-Sheets-Workflow',
+  },
+  {
     id: 'city-atlas-generator',
     title: 'City Atlas Generator',
     blurb: 'Generate premium dark-mode city maps with live layers, palette controls, and export-ready renders.',
