@@ -11,6 +11,16 @@ export const projects: Project[] = [
     screenshot: '/One-Of-Us.png',
   },
   {
+    id: 'google-sheets-to-supabase',
+    title: 'Google Sheets To Supabase Automation',
+    blurb: 'Python productivity tool that automates fetching data from Google Sheets and syncing it to Supabase tables.',
+    details:
+      'Automates the pipeline from Google Sheets to Supabase, handling data fetching, table creation, and row insertion.\nFeatures include automatic primary key generation, lossless text conversion, and null handling for blank cells.\nUses OAuth 2.0 for secure access and includes scripts for both full table recreation and upserts.',
+    skills: ['Python', 'Google Sheets API', 'Supabase', 'PostgreSQL', 'Automation', 'OAuth 2.0'],
+    screenshot: '/Sheets2Base.png',
+    github: 'https://github.com/TommyMaglietto/Google-Sheets-To-Supabase',
+  },
+  {
     id: 'square-to-google-sheets-automation',
     title: 'Square to Google Sheets Automation',
     blurb: 'Python automation that syncs Square customer records to Google Sheets without manual CSV exports.',
