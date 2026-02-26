@@ -4,6 +4,7 @@ export type Project = {
   blurb: string;
   details: string;
   skills: string[];
+  source: 'open' | 'closed';
   github?: string;
   live?: string;
   screenshot?: string;

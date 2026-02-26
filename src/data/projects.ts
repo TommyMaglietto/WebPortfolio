@@ -8,7 +8,9 @@ export const projects: Project[] = [
     details:
       'Players must repair generators, find keys, and work together to escape - all while a terrifying Skinwalker lurks among them, disguised as one of their own. Paranoia spreads as trust crumbles: anyone could be the monster. Armed with flashlights and the occasional shotgun, survivors can expose or fight back - but hesitation means death.\n\n"Trust no one. Not even your closest friend."',
     skills: ['Roblox Studio', 'Lua', 'Multiplayer', 'Game Design', 'Horror', 'Networking'],
+    source: 'open',
     screenshot: '/One-Of-Us.png',
+    github: 'https://github.com/TommyMaglietto/One-of-Us--Roblox-Studio',
   },
   {
     id: 'google-sheets-to-supabase',
@@ -17,6 +19,7 @@ export const projects: Project[] = [
     details:
       'Automates the pipeline from Google Sheets to Supabase, handling data fetching, table creation, and row insertion.\nFeatures include automatic primary key generation, lossless text conversion, and null handling for blank cells.\nUses OAuth 2.0 for secure access and includes scripts for both full table recreation and upserts.',
     skills: ['Python', 'Google Sheets API', 'Supabase', 'PostgreSQL', 'Automation', 'OAuth 2.0'],
+    source: 'open',
     screenshot: '/Sheets2Base.png',
     github: 'https://github.com/TommyMaglietto/Google-Sheets-To-Supabase',
   },
@@ -27,6 +30,7 @@ export const projects: Project[] = [
     details:
       'Built a modular Python integration that pulls complete customer directories from Square via API pagination, normalizes JSON fields, and writes structured rows to Google Sheets.\nImplements OAuth 2.0 for secure Google Workspace access and includes resilient handling for empty datasets, network interruptions, and large account sizes.\nDesigned as a one-click workflow to keep customer data current for analysis and marketing operations.',
     skills: ['Python', 'Square API', 'Google Sheets API', 'OAuth 2.0', 'Data Automation', 'JSON Processing'],
+    source: 'open',
     screenshot: '/square-to-sheets.png',
     github: 'https://github.com/TommyMaglietto/Square-To-Sheets-Workflow',
   },
@@ -37,6 +41,7 @@ export const projects: Project[] = [
     details:
       'Interactive canvas map renderer powered by OpenStreetMap data, with smooth pan/zoom, layer toggles, and a full color studio for fine-tuning the look.\nIncludes geocoding search, Overpass API data fetches, smart caching to keep navigation fluid, and 1x/2x/3x PNG exports for crisp presentation.',
     skills: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'OpenStreetMap', 'Overpass API', 'Nominatim'],
+    source: 'open',
     github: 'https://github.com/TommyMaglietto/Simple-Custom-Map-Generator',
     screenshot: '/map.png',
   },
@@ -47,6 +52,7 @@ export const projects: Project[] = [
     details:
       'Swipe-based yes/maybe/no cards with flip-to-comment interactions, local persistence with API sync, and community submissions with category filters, profanity checks, and abuse reporting.\nCore client component components/SwipeDeck.tsx orchestrates swipes, forms, and reporting modals while a weighted deck balances official and community features.\nSupabase-backed data model: features (id, name, category, description, created_at) and opinions (feature_id, score 1-3, rating 1-5 optional, comment, created_at).\nAPI routes: /api/features, /api/opinions, /api/community-features, /api/admin/* with a middleware-protected admin dashboard at /admin and Recharts analytics.',
     skills: ['Next.js 16', 'React 19', 'Tailwind CSS 4', 'Supabase', 'PostgreSQL', 'Recharts', 'API Routes'],
+    source: 'open',
     screenshot: '/SOMP.png',
     github: 'https://github.com/TommyMaglietto/SaveOneMorePerson-Market-Research-Site',
     live: 'https://saveonemoreperson.com',
@@ -58,6 +64,7 @@ export const projects: Project[] = [
     details:
       'Built with React 19, Vite, and TypeScript to deliver a responsive arcade UI with pixel art framing and scanline accents.\nFeatures a starfield canvas background, tabbed navigation with localStorage persistence, and a gamified social loadout with keyboard shortcuts.\nIncludes a resume download flow plus dedicated projects and experience sections.',
     skills: ['React 19', 'Vite', 'TypeScript', 'CSS', 'HTML5 Canvas', 'Responsive Design'],
+    source: 'open',
     screenshot: '/PixelMe.png',
     github: 'https://github.com/TommyMaglietto/WebPortfolio',
   },
@@ -68,6 +75,7 @@ export const projects: Project[] = [
     details:
       'Contributed to UI flows and data handling; focused on resource discovery and accessibility features.',
     skills: ['SwiftUI', 'iOS', 'Teamwork'],
+    source: 'closed',
     screenshot: '/HHC.jpg',
   },
   {
@@ -77,6 +85,7 @@ export const projects: Project[] = [
     details:
       'Implemented instruction decoding, pipeline stages, and a basic debugger; wrote unit tests for correctness.',
     skills: ['C', 'Computer Architecture', 'Testing'],
+    source: 'closed',
     screenshot: '/Y86.png',
   },
   {
@@ -86,6 +95,7 @@ export const projects: Project[] = [
     details:
       'Purely functional design with monadic IO; modularized deck and hand evaluation logic.',
     skills: ['Haskell', 'Functional Programming'],
+    source: 'open',
     screenshot: '/Haskel.png',
     github: 'https://github.com/TommyMaglietto/BlackJack-In-Haskell',
   },
@@ -96,6 +106,7 @@ export const projects: Project[] = [
     details:
       'Practiced modeling, texturing, and lighting; exported renders for portfolio presentation.',
     skills: ['Blender', '3D Modeling', 'Design'],
+    source: 'closed',
     screenshot: '/Blender.png',
   },
 ];
